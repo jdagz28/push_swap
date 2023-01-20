@@ -1,13 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdagoy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2022/12/21 14:20:09 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/20 22:05:44 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
+# include <unistd.h>
+# include <stdlib.h>
+
+typedef struct s_stack
+{
+    int             value;
+    int             index;
+    int             partition;
+    struct s_stack  *next
+}                   t_stack;
+
+#endif;
