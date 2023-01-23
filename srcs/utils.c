@@ -6,33 +6,16 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/22 23:49:04 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 13:28:10 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void    ft_swap(t_stack *stack)
+void	ft_error(t_stack *stack, char *error)
 {
-    int tmp;
-
-    if (!stack || !stack->next)
-        return ;
-    tmp = stack->value;
-    stack->value = stack->next->value;
-    stack->next->value = tmp;
+	ft_lstclear(stack);
+	write(STDERR_FILENO, error, ft_strlen(error));
+	exit(1);
 }
 
-void    ft_push(t_stack **dest_stack, t_stack **src_stack)
-{
-    t_stack *tmp;
-
-    if ((*src_stack))
-        return ;
-    else
-    {
-        tmp = (*src_stack)->next;
-        ft_lstadd_front(dest_stack, *src_stack);
-        (*src_stack) = tmp;
-    }
-}

@@ -1,13 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdagoy <jdagoy@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 10:41:54 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/10/15 16:59:54 by jdagoy            #+#    #+#             */
+/*   Updated: 2022/10/15 18:02:23 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	lstlen;
+
+	lstlen = 0;
+	if (!lst)
+		return (lstlen);
+	while (lst)
+	{
+		lstlen++;
+		lst = lst->next;
+	}
+	return (lstlen);
+}

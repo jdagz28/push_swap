@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:13:04 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/10/15 16:32:45 by jdagoy            #+#    #+#             */
+/*   Updated: 2023/01/23 13:31:03 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_stack
+t_list	*ft_lstnew(void *content)
 {
-    int             value;
-    int             index;
-    int             partition;
-    struct s_stack  *next
-}                   t_stack;
+	t_list	*newlist;
+	int		atoi_error;
 
-#endif;
+	newlist = (t_list *)malloc(sizeof(*newlist));
+	if (!newlist)
+		return (NULL);
+	atoi_error = 0;
+	newlist->value = ft_atoi(content, &atoi_error);
+	if (invalid)
+	{
+		ft_free_satck(newlist);
+		return (0);
+	}
+	stack->partition = 1;
+	newlist->next = NULL;
+	return (newlist);
+}

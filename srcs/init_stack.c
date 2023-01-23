@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:34:20 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 13:32:45 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int argc, char **argv)
+void    ft_check_duplicate(t_stack *stack)
 {
-    t_stack     *stack_a;
-    t_stack     *stack_b;
+    t_stack *tmp;
+    t_stack *lst;
 
-    if (argc < 2 || (argc == 2 && argv[1][0] == 0))
-        return (0);
-    if (argc == 2)
-        stack_a = ft_init_stack(ft_split(argv[1], ' '), 0);
-    else
-        stack_a = ft_init_stack(argv, 1);
-    if (!stack_a)
-        return (ft_error());
-    stack_b = 0;
-    ft_sort(&stack_a, &stack_b);
-    ft_free_stack(stack_a);
-    ft_free_stack(stack_b);
-    return (0);
+    lst = stack;
+    while (lst)
+    {
+        tmp = lst->next;
+        while (tmp)
+        {
+            if (!tmp->next || (lst->value == tmp->value))
+                ft_error(stack, ERROR);
+            tmp = tmp->next;
+        }
+        lst = lst->next
+    }
 }
+
+t_stack *ft_init_stack(char **argv)
+{
+    int i;
+    t_stack *stack_a;
+
+
+    i = 0;
+    if (!argv)
+        return (0);
+    stack_a = ft_lstnew(argv[i]);   
+    while (argv[++i])
+        ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(argv[i])));
+    ft_check_duplicate(stack_a);
+    return (stack_a)
+}
+

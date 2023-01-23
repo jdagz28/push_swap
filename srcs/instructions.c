@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:22 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/22 23:50:16 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 11:46:26 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 // SWAP - swap the first 2 elements
 void    sa(t_stack **stack_a)
