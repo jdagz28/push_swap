@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:13:04 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 20:31:52 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_stack
 {
     int             value;
     int             index;
-    int             partition;
+    int             bucket;
     struct s_stack  *next
 }                   t_stack;
 

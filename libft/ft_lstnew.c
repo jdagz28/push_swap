@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 16:32:45 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:31:03 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 20:32:13 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void *content)
 		ft_free_satck(newlist);
 		return (0);
 	}
-	stack->partition = 1;
+	stack->bucket = 1;
 	newlist->next = NULL;
 	return (newlist);
 }
