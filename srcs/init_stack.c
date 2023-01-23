@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:32:45 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/23 22:34:48 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    ft_check_duplicate(t_stack *stack)
         while (tmp)
         {
             if (!tmp->next || (lst->value == tmp->value))
-                ft_error(stack, ERROR);
+                ft_error(stack, "Error\n");
             tmp = tmp->next;
         }
         lst = lst->next
@@ -35,7 +35,6 @@ t_stack *ft_init_stack(char **argv)
 {
     int i;
     t_stack *stack_a;
-
 
     i = 0;
     if (!argv)
