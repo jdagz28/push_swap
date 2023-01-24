@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 17:06:12 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/24 21:11:00 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/10/05 11:09:58 by jdagoy            #+#    #+#             */
+/*   Updated: 2023/01/24 21:20:33 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_lstlast(t_stack *lst)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (!lst)
+	unsigned char	*dest;
+	unsigned char	*s;
+	unsigned int	i;
+
+	i = 0;
+	dest = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (!dest && !s && n)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (n)
+	{
+		dest[i] = s[i];
+		i++;
+		n--;
+	}
+	return (dst);
 }

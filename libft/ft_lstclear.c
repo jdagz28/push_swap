@@ -6,15 +6,15 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:28:17 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:30:00 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:08:13 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_lstclear(t_stack **lst)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	while (lst && *lst)
 	{

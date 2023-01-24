@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdagoy <jdagoy@student.s19.be>             +#+  +:+       +#+        */
+/*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:17:49 by jdagoy            #+#    #+#             */
-/*   Updated: 2022/10/21 12:47:17 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:20:47 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "../includes/push_swap.h"
 
 static size_t	ft_wordcount(char const *s, char c)
 {

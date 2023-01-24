@@ -6,16 +6,13 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 18:04:18 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 13:31:19 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:37:38 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_lstdelone(t_list *lst)
+void	ft_lstdelone(t_stack *lst)
 {
-	if (!lst)
-		return ;
-	del(lst->value);
 	free(lst);
 }

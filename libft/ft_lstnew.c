@@ -6,28 +6,28 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 16:32:45 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/23 20:32:13 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/24 22:15:22 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(void *content)
 {
-	t_list	*newlist;
+	t_stack	*newlist;
 	int		atoi_error;
 
-	newlist = (t_list *)malloc(sizeof(*newlist));
+	newlist = (t_stack *)malloc(sizeof(*newlist));
 	if (!newlist)
 		return (NULL);
 	atoi_error = 0;
 	newlist->value = ft_atoi(content, &atoi_error);
-	if (invalid)
+	if (atoi_error)
 	{
-		ft_free_satck(newlist);
+		free(newlist);
 		return (0);
 	}
-	stack->bucket = 1;
+	newlist->bucket = 1;
 	newlist->next = NULL;
 	return (newlist);
 }
