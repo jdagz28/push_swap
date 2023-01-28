@@ -6,17 +6,24 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:47 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/24 21:36:08 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/27 23:01:09 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "limits.h"
+#include "../includes/push_swap.h"
 
-int	ft_atoi(const char *str, int *atoi_error)
+static int	ft_atoi_check(long long atoi)
+{
+	if (atoi > INT_MAX || atoi < INT_MIN)
+		ft_error(NULL, "Error");
+	return (atoi);
+}
+
+int	ft_atoi(const char *str)
 {
 	int					i;
 	int					sign;
-	long 				atoi;
+	long long			atoi;
 
 	i = 0;
 	sign = 1;
@@ -24,16 +31,17 @@ int	ft_atoi(const char *str, int *atoi_error)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
+	{	if (str[i++] == '-')
 			sign *= -1;
-	while (str[i] >= 0 && str[i] <= 9)
+		if (!ft_isdigit(str[i]))
+			ft_error(NULL, "Error");
+	}
+	i = -1;
+	while (str[++i] && i <= 10)
 	{	
+		if (!ft_isdigit(str[i]))
+			ft_error(NULL, "Error");
 		atoi = atoi * 10 + (str[i++] - '0');
-		if (sign * atoi < INT_MIN || sign * atoi > INT_MAX)
-		{
-			*atoi_error = 1;
-			return (0);
-		}
 	}	
-	return (atoi * sign);
+	return (ft_atoi_check(atoi * sign));
 }

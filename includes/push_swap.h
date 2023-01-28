@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/24 21:46:14 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/28 00:47:49 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,26 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
+
+typedef struct s_node
+{
+    int             data;
+    struct s_node   *prev;
+    struct s_node   *next;
+}   t_node;
 
 typedef struct s_stack
 {
-    int             value;
-    int             index;
-    int             bucket;
-    struct s_stack  *next;
-}                   t_stack;
+    t_node  *head;
+    t_node  *tail;
+    int     size;
+    int     min;
+    int     max;
+}   t_stack;
 
 //initialize stack
-t_stack *ft_init_stack(char **argv);
+void    ft_init_stack(t_stack **stack)
 
 
 //instructions
@@ -40,10 +49,10 @@ void    rr(t_stack **stack_a, t_stack **stack_b);
 void    rra(t_stack **stack_a);
 void    rrb(t_stack **stack_b);
 void    rrr(t_stack **stack_a, t_stack **stack_b);
-void    ft_swap(t_stack *stack);
-void    ft_push(t_stack **dest_stack, t_stack **src_stack);
-void    ft_rotate(t_stack **stack);
-void    ft_reverse_rotate(t_stack **stack);
+// void    ft_swap(t_stack *stack);
+// void    ft_push(t_stack **dest_stack, t_stack **src_stack);
+// void    ft_rotate(t_stack **stack);
+// void    ft_reverse_rotate(t_stack **stack);
 
 //utils
 
