@@ -6,13 +6,13 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/28 01:02:09 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/29 02:35:23 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
+void    ft_b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
 {
     int     i;
     int     index_a;
@@ -23,7 +23,7 @@ void    b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
     i = 0;
     while (i++ < stack_b->size)
     {
-        index_a = find_location(stack_a, node_b->data);
+        index_a = ft_find_location(stack_a, node_b->data);
         if (i >= (stack_b->size + 1) / 2)
             index_b = (stack_b->size - i) * -1;
         else
@@ -40,7 +40,7 @@ void    b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
     update_min_max(stack_a);
 }
 
-void    divide_three(t_stack *stack_a, t_stack *stack_b, int list_size)
+void    ft_divide_three(t_stack *stack_a, t_stack *stack_b, int list_size)
 {
     int     top_index;
     int     group_size;
@@ -112,9 +112,9 @@ void    ft_sort(t_stack *stack_a)
     if (is_already_sorted(stack_a) == 1)
         return ;
     ft_init_stack(&stack_b);
-    divide_three(stack_a, stack_b, stack_a->size);
+    ft_divide_three(stack_a, stack_b, stack_a->size);
     while (stack_a->size > 3)
-        pb(stack_b, remove_first(stack_a));
+        pb(stack_b, ft_remove_first(stack_a));
     if (stack_a->size == 2)
         if (stack_a->head->next->data > stack_a->tail->prev->data)
             sa(stack_a);
@@ -123,7 +123,7 @@ void    ft_sort(t_stack *stack_a)
     stack_a->min = stack_a->head->next->data;
     stack_a->max = stack_a->tail->prev->data;
     while (stack_b->size > 0)
-        b_to_a(stack_a, stack_b, stack_b->head->next);
-    last_sort(stack_a);
+        ft_b_to_a(stack_a, stack_b, stack_b->head->next);
+    ft_last_sort(stack_a);
     ft_lstclear(stack_b);
 }

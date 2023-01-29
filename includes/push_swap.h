@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/28 00:47:49 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/28 23:22:54 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,6 @@ void    rrr(t_stack **stack_a, t_stack **stack_b);
 
 
 //libft
-int	ft_atoi(const char *str, int *atoi_error);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
-void	ft_lstadd_front(t_stack **lst, t_stack *new);
-void	ft_lstclear(t_stack **lst);
-void	ft_lstdelone(t_stack *lst);
-t_stack	*ft_lstlast(t_stack *lst);
-t_stack	*ft_lstnew(void *content);
-int	ft_lstsize(t_stack *lst);
 
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-char	**ft_split(char const *s, char c);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

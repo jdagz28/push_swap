@@ -6,61 +6,91 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/27 23:45:23 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/28 23:42:32 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// void    ft_swap(t_stack *stack)
+void    ft_swap(t_stack *stack)
+{
+    int temp;
+
+    if (!stack || !stack->head->next)
+        return ;
+    temp = stack->head->data;
+    stack->head->next->data = stack->head->next->next->data;
+    stack->head->next->next->data = temp;
+}
+
+void    ft_push(t_stack *stack, int data)
+{
+    t_node  *new_node;
+
+    new_node = (t_node *)malloc(sizeof(t_node));
+    if(!new_node)
+        ft_error(stack, "Error");
+    new_node->data = data;
+    new_node->prev = stack->head;
+    new_node->next = stack->head->next;
+    stack->head->next->prev = new_node;
+    stack->head->next = new_node;
+    (stack->size)++;
+}
+
+void    ft_rotate(t_stack *stack)
+{
+    t_node  *temp;
+
+    temp = stack->head->next;
+    stack->head->next = stack->head->next->next;
+    stack->head->next->prev = stack->head;
+    temp->prev = stack->tail->prev;
+    temp->next = stack->tail;
+    stack->tail->prev->next = temp;
+    stack->tail->prev = temp;
+}
+
+void    ft_reverse_rotate(t_stack *stack)
+{
+    t_node  *temp;
+
+    temp = stack->tail->prev;
+    stack->tail->prev = stack->tail->prev->prev;
+    stack->tail->prev->next = stack->tail;
+    temp->prev = stack->head;
+    temp->next = stack->head->next;
+    stack->head->next->prev = temp;
+    stack->head->next = temp;
+}
+
+int     remove_first(t_stack *stack)
+{
+    t_node *r_node;
+    int     r_data;
+    
+    if (stack->size == 0)
+        return (-1);
+    r_node = stack->head->next;
+    r_data = stack->head->next->data;
+    stack->head->next = stack->head->next->next;
+    free(r_node);
+    stack->head->next->prev = stack->head;
+    (stack->size)--;
+    return (r_data);
+}
+
+// void    ft_add_first(t_stack *stack, int data) //integrated to ft_push
 // {
-//     int tmp;
+//     t_node  *new_node;
 
-//     if (!stack || !stack->next)
-//         return ;
-//     tmp = stack->value;
-//     stack->value = stack->next->value;
-//     stack->next->value = tmp;
-// }
-
-// void    ft_push(t_stack **dest_stack, t_stack **src_stack)
-// {
-//     t_stack *tmp;
-
-//     if ((*src_stack))
-//         return ;
-//     else
-//     {
-//         tmp = (*src_stack)->next;
-//         ft_lstadd_front(dest_stack, *src_stack);
-//         (*src_stack) = tmp;
-//     }
-// }
-
-// void    ft_rotate(t_stack **stack)
-// {
-//     t_stack *tmp;
-//     if (!*stack || !(*stack)->next)
-//         return ;
-//     tmp = *stack;
-//     *stack = (*stack)->next;
-//     tmp->next = NULL;
-//     ft_lstadd_back(stack, tmp->next);
-//     tmp->next = NULL;
-// }
-
-// void    ft_reverse_rotate(t_stack **stack)
-// {
-//     t_stack *tmp;
-//     t_stack *last_entry;
-
-//     if (!*stack || !(*stack)->next)
-//         return ;
-//     tmp = *stack;
-//     while (tmp->next && tmp->next->next)
-//         tmp = tmp->next;
-//     last_entry = tmp->next;
-//     tmp->next = NULL;
-//     last_entry->next = *stack;
-//     *stack = last_entry;
+//     new_node = (t_node *)malloc(sizeof(t_node));
+//     if(!new_node)
+//         ft_error(stack, "Error");
+//     new_node->data = data;
+//     new_node->prev = stack->head;
+//     new_node->next = stack->head->next;
+//     stack->head->next->prev = new_node;
+//     stack->head->next = new_node;
+//     (stack->size)++;
 // }

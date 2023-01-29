@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   list_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/27 23:08:28 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/28 23:29:46 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 void    ft_add_last(t_stack *stack, int data)
 {
@@ -22,7 +21,7 @@ void    ft_add_last(t_stack *stack, int data)
         ft_error(stack, "Error");
     new_node->data = data;
     new_node->prev = stack->tail->prev;
-    new_nodw->next = stack->tak;
+    new_node->next = stack->tail;
     stack->tail->prev->next = new_node;
     stack->tail->prev = new_node;
     (stack->size)++;
@@ -48,7 +47,7 @@ void    ft_insert_numbers(t_stack *stack_a, int argc, char *argv[])
         {
             num = ft_atoi(numbers[i]);
             ft_add_last(stack_a, num);
-            i++
+            i++;
         }
         ft_free(numbers);    
     }   
