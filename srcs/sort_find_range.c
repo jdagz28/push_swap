@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 23:40:38 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 03:15:53 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 22:45:32 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int     find_location_median(t_stack *stack_a, int num)
     return (index);
 }
 
-int     find_lcoation_min(t_stack *stack_a)
+int     find_location_min(t_stack *stack_a)
 {
     int     index;
     t_node  *node;

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 04:10:16 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 23:13:30 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,16 @@ int main(int argc, char **argv)
     ft_sort(stack_a);
     return (0);
 }
+
+// void	list_free(t_list *list)
+// {
+// 	t_node	*temp;
+
+// 	while (list->head)
+// 	{
+// 		temp = list->head->next;
+// 		free(list->head);
+// 		list->head = temp;
+// 	}
+// 	free(list);
+// }

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 01:52:29 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 02:07:12 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 23:01:26 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int     abs_sum(int num_a, int num_b)
         num_a *= -1;
     if (num_b < 0)
         num_b *= -1;
-    return (num_a + num_2);
+    return (num_a + num_b);
 }
 
 void    ft_rotate_list(t_stack *stack_a, t_stack *stack_b, int index_a, int index_b)

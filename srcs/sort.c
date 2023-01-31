@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 03:15:03 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 22:45:03 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    ft_b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
         }
         node_b = node_b->next;
     }
-    ft_list_rotate(stack_a, stack_b, min_a, min_b);
+    ft_rotate_list(stack_a, stack_b, min_a, min_b);
     pa(stack_a, remove_first(stack_b));
     update_range(stack_a);
 }
@@ -88,7 +88,7 @@ void    ft_sort_three(t_stack *stack)
         if (mid > top && mid > bottom && bottom > top)
         {
             sa(stack);
-            ra(stack)
+            ra(stack);
         }
         else if (top > mid && mid > bottom && top > bottom)
         {
@@ -114,7 +114,7 @@ void    ft_sort(t_stack *stack_a)
     ft_init_stack(&stack_b);
     ft_divide_three(stack_a, stack_b, stack_a->size);
     while (stack_a->size > 3)
-        pb(stack_b, ft_remove_first(stack_a));
+        pb(stack_b, remove_first(stack_a));
     if (stack_a->size == 2)
         if (stack_a->head->next->data > stack_a->tail->prev->data)
             sa(stack_a);
@@ -125,5 +125,5 @@ void    ft_sort(t_stack *stack_a)
     while (stack_b->size > 0)
         ft_b_to_a(stack_a, stack_b, stack_b->head->next);
     ft_last_sort(stack_a);
-    ft_lstclear(stack_b);
+    ft_lstclear(&stack_b);
 }

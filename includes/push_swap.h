@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 04:25:30 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 23:07:25 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void    ft_index_list(int *temp, t_stack *stack_a);
 int ft_check_duplicate(int *temp, int list_len);
 
 //preprocess - sort
-void    ft_quick_sort(int *arr, int left, int right);
-int ft_binary_search(int *arr, int len, int target);
+void    ft_quick_sort(int *array, int left, int right);
+int ft_binary_search(int *array, int len, int target);
 
 //sort
 void    ft_sort(t_stack *stack_a);
@@ -79,7 +79,7 @@ void    ft_b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b);
 
 //sort - find range
 int     ft_find_location(t_stack *stack_a, int num);
-int     find_lcoation_min(t_stack *stack_a);
+int     find_location_min(t_stack *stack_a);
 int     find_location_median(t_stack *stack_a, int num);
 int     find_location_max(t_stack *stack_a);
 
@@ -91,7 +91,7 @@ void    ft_last_sort(t_stack *stack_a);
 
 //utils
 void	ft_error(t_stack *stack, char *error);
-void	ft_free(char **str);
+void	ft_free_array(char **str);
 void	ft_lstclear(t_stack **lst);
 
 //libft
