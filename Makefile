@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 14:20:07 by jdagoy            #+#    #+#              #
-#    Updated: 2023/01/24 22:16:00 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/01/31 04:09:43 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,25 +21,24 @@ WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
 SRC			=		srcs/main.c \
-					srcs/init_stack.c \
 					srcs/instructions.c \
-					srcs/instructions_utils.c
+					srcs/instructions_utils.c \
+					srcs/list_operations.c \
+					srcs/preprocess.c \
+					srcs/preprocess-sort.c \
+					srcs/sort.c \
+					srcs/sort_find_range.c \
+					srcs/sort_utils.c \
+					srcs/utils.c
 
 LIBFT			=	libft/ft_atoi.c \
-					libft/ft_lstadd_back.c \
-					libft/ft_lstadd_front.c \
-					libft/ft_lstclear.c \
-					libft/ft_lstdelone.c \
-					libft/ft_lstlast.c \
-					libft/ft_lstnew.c \
-					libft/ft_lstsize.c \
 					libft/ft_memcpy.c \
 					libft/ft_split.c \
 					libft/ft_strdup.c \
 					libft/ft_strlcpy.c \
 					libft/ft_strlen.c \
-					libft/ft_substr.c
-
+					libft/ft_substr.c \
+					libft/ft_isdigit.c
 
 
 NAME			= push_swap

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/28 23:29:46 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 04:23:25 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,21 @@ void    ft_add_last(t_stack *stack, int data)
     (stack->size)++;
 }
 
-void    ft_insert_numbers(t_stack *stack_a, int argc, char *argv[])
+void    ft_insert_numbers(t_stack *stack_a, int argc, char **argv)
 {
     int     i;
-    int     j;
     char    **numbers;
     int     num;
     
-    i = 0;
     while (--argc)
     {
-        if(argv[++i] == '\0')
+        if(**(++argv) == '\0')
             ft_error(stack_a, "Error");
-        numbers = ft_split(argv[i], ' ');
+        numbers = ft_split(*argv, ' ');
         if (!numbers)
             ft_error(stack_a, "Error");
-        j = 0;
-        while (numbers[j])
+        i = 0;
+        while (numbers[i])
         {
             num = ft_atoi(numbers[i]);
             ft_add_last(stack_a, num);

@@ -6,13 +6,13 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/27 23:44:49 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 02:14:35 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void ft_index_list(int *temp, t_stack *stack_a)
+void    ft_index_list(int *temp, t_stack *stack_a)
 {
     t_node  *node;
 
@@ -24,7 +24,7 @@ static void ft_index_list(int *temp, t_stack *stack_a)
     }
 }
 
-static int ft_check_duplicate(int *temp, int list_len)
+int ft_check_duplicate(int *temp, int list_len)
 {
     int i;
 
@@ -38,7 +38,7 @@ static int ft_check_duplicate(int *temp, int list_len)
     return (0);
 }
 
-static void ft_temp_insert_numbers(int *temp, t_stack *stack_a)
+void    ft_temp_insert_numbers(int *temp, t_stack *stack_a)
 {
     t_node  *node;
 

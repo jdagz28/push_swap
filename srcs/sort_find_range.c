@@ -6,13 +6,13 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 23:40:38 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/29 02:35:08 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 03:15:53 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-ind     find_location_max(t_stack *stack_a)
+int     find_location_max(t_stack *stack_a)
 {
     int     index;
     t_node  *node;

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/28 23:42:32 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 04:27:22 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void    ft_push(t_stack *stack, int data)
 
     new_node = (t_node *)malloc(sizeof(t_node));
     if(!new_node)
-        ft_error(stack, "Error");
+        return ;
     new_node->data = data;
     new_node->prev = stack->head;
     new_node->next = stack->head->next;

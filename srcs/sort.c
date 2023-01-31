@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/29 02:35:23 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/01/31 03:15:03 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void    ft_b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
         }
         node_b = node_b->next;
     }
-    rotate(stack_a, stack_b, min_a, min_b);
+    ft_list_rotate(stack_a, stack_b, min_a, min_b);
     pa(stack_a, remove_first(stack_b));
-    update_min_max(stack_a);
+    update_range(stack_a);
 }
 
 void    ft_divide_three(t_stack *stack_a, t_stack *stack_b, int list_size)
