@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 23:08:57 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 09:31:54 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(t_stack *stack, char *error)
 {
-	ft_lstclear(&stack);
+	ft_lstclear(stack);
 	write(STDERR_FILENO, error, ft_strlen(error));
 	exit(1);
 }
@@ -29,15 +29,15 @@ void	ft_free_array(char **str)
 	free(str);
 }
 
-void	ft_lstclear(t_stack **lst)
+void	ft_lstclear(t_stack *lst)
 {
 	t_node	*temp;
 
-	while (lst && (*lst)->head)
+	while (lst && lst->head)
 	{
-		temp = (*lst)->head->next;
-		free((*lst)->head);
-		(*lst)->head = temp;
+		temp = lst->head->next;
+		free((lst)->head);
+		(lst)->head = temp;
 	}
 	free(lst);
 }

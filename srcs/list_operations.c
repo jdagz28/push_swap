@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 23:07:42 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 10:41:43 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void    ft_insert_numbers(t_stack *stack_a, int argc, char **argv)
     while (--argc)
     {
         if(**(++argv) == '\0')
-            ft_error(stack_a, "Error");
+            ft_error(stack_a, "Error\n");
         numbers = ft_split(*argv, ' ');
         if (!numbers)
-            ft_error(stack_a, "Error");
+            ft_error(stack_a, "Error\n");
         i = 0;
         while (numbers[i])
         {
@@ -55,11 +55,11 @@ void    ft_init_stack(t_stack **stack)
 {
     *stack = (t_stack *)malloc(sizeof(t_stack));
     if (!*stack)
-        ft_error(*stack, "Error");
+        ft_error(*stack, "Error\n");
     (*stack)->head = (t_node *)malloc(sizeof(t_node));
     (*stack)->tail = (t_node *)malloc(sizeof(t_node));
     if(!(*stack)->head || !(*stack)->tail)
-        ft_error(*stack, "Error");
+        ft_error(*stack, "Error\n");
     (*stack)->head->prev = NULL;
     (*stack)->head->next = (*stack)->tail;
     (*stack)->tail->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:47 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/28 23:22:48 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 12:16:34 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_atoi_check(long long atoi)
 {
 	if (atoi > INT_MAX || atoi < INT_MIN)
-		ft_error(NULL, "Error");
+		ft_error(NULL, "Error\n");
 	return (atoi);
 }
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 {
 	int					i;
 	int					sign;
-	long long			atoi;
+	unsigned long long	atoi;
 
 	i = 0;
 	sign = 1;
@@ -31,17 +31,9 @@ int	ft_atoi(const char *str)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{	if (str[i++] == '-')
+		if (str[i++] == '-')
 			sign *= -1;
-		if (!ft_isdigit(str[i]))
-			ft_error(NULL, "Error");
-	}
-	i = -1;
-	while (str[++i] && i <= 10)
-	{	
-		if (!ft_isdigit(str[i]))
-			ft_error(NULL, "Error");
+	while (ft_isdigit(str[i]))
 		atoi = atoi * 10 + (str[i++] - '0');
-	}	
 	return (ft_atoi_check(atoi * sign));
 }

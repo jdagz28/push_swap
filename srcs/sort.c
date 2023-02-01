@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 22:45:03 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 09:31:34 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,5 @@ void    ft_sort(t_stack *stack_a)
     while (stack_b->size > 0)
         ft_b_to_a(stack_a, stack_b, stack_b->head->next);
     ft_last_sort(stack_a);
-    ft_lstclear(&stack_b);
+    ft_lstclear(stack_b);
 }

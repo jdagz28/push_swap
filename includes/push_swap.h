@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 23:07:25 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 09:29:10 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void    ft_last_sort(t_stack *stack_a);
 //utils
 void	ft_error(t_stack *stack, char *error);
 void	ft_free_array(char **str);
-void	ft_lstclear(t_stack **lst);
+void	ft_lstclear(t_stack *lst);
 
 //libft
 int	ft_atoi(const char *str);

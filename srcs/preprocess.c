@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/31 02:14:35 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/01 10:41:55 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void    ft_preprocess(t_stack *stack_a)
 
     temp = (int *)malloc(sizeof(int) * stack_a->size);
     if(!temp)
-        ft_error(stack_a, "Error");
+        ft_error(stack_a, "Error\n");
     ft_temp_insert_numbers(temp, stack_a);
     ft_quick_sort(temp, 0, stack_a->size -1);
     if (ft_check_duplicate(temp, stack_a->size) == 1)
-        ft_error(stack_a, "Error");
+        ft_error(stack_a, "Error\n");
     ft_index_list(temp, stack_a);
     free(temp);
 }
