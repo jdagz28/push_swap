@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/01 10:42:37 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/02 14:46:55 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void    ft_swap(t_stack *stack)
 {
     int temp;
 
-    if (!stack || !stack->head->next)
-        return ;
     temp = stack->head->data;
     stack->head->next->data = stack->head->next->next->data;
     stack->head->next->next->data = temp;

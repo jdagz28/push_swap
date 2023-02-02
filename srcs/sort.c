@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/01 09:31:34 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/02 15:02:46 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void    ft_b_to_a(t_stack *stack_a, t_stack *stack_b, t_node *node_b)
     int     min_a;
     int     min_b;
 
-    i = 0;
-    while (i++ < stack_b->size)
+    i = -1;
+    while (++i < stack_b->size)
     {
         index_a = ft_find_location(stack_a, node_b->data);
         if (i >= (stack_b->size + 1) / 2)
