@@ -6,9 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:54:29 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/03 11:57:28 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/03 15:23:54 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 // ROTATE - shift up all element of stack by 1
 void	ra(t_stack *stack_a)

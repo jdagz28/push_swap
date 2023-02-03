@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instructions_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdagoy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 12:14:59 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/03 12:31:53 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/03 15:24:16 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
