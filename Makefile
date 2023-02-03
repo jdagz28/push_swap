@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 14:20:07 by jdagoy            #+#    #+#              #
-#    Updated: 2023/01/31 04:09:43 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/03 13:26:53 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ RESET		= $(shell tput -Txterm sgr0)
 
 SRC			=		srcs/main.c \
 					srcs/instructions.c \
+					srcs/instructions_2.c \
+					srcs/instructions_3.c \
 					srcs/instructions_utils.c \
 					srcs/list_operations.c \
 					srcs/preprocess.c \
