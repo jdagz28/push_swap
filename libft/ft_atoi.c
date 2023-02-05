@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:21:47 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/02 12:55:04 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:38:59 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
 static int	ft_atoi_check(long long atoi)
 {

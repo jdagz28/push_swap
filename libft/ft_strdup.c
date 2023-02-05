@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:51:48 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/24 21:21:16 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:07:09 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jdagoy <jdagoy@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 11:09:58 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 00:07:30 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/10/05 13:45:30 by jdagoy            #+#    #+#             */
+/*   Updated: 2022/10/13 00:33:35 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*dest;
-	unsigned char	*s;
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	dest = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (!dest && !s && n)
-		return (NULL);
-	while (n)
+	while (s && s[i])
 	{
-		dest[i] = s[i];
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
-		n--;
 	}
-	return (dst);
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }

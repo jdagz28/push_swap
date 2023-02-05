@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 10:27:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2022/11/14 10:26:51 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/10/07 14:13:59 by jdagoy            #+#    #+#             */
+/*   Updated: 2022/10/14 16:14:01 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*s;
+	size_t	lens1;
+	size_t	lens2;
 
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *s1);
-char	*ft_strchr(const char *s, int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*get_next_line(int fd);
-
-#endif
+	if (!s1 && !s2)
+		return (NULL);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	s = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1));
+	if (!s)
+		return (NULL);
+	ft_strlcpy(s, (char *)s1, lens1 + 1);
+	ft_strlcat(s, (char *)s2, lens1 + lens2 + 1);
+	return (s);
+}

@@ -6,63 +6,81 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 14:20:07 by jdagoy            #+#    #+#              #
-#    Updated: 2023/02/03 13:26:53 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/05 01:13:10 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-BLACK		= $(shell tput -Txterm setaf 0)
-RED			= $(shell tput -Txterm setaf 1)
 GREEN		= $(shell tput -Txterm setaf 2)
 YELLOW		= $(shell tput -Txterm setaf 3)
 LIGHTPURPLE	= $(shell tput -Txterm setaf 4)
-PURPLE		= $(shell tput -Txterm setaf 5)
-BLUE		= $(shell tput -Txterm setaf 6)
-WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
-SRC			=		srcs/main.c \
-					srcs/instructions.c \
-					srcs/instructions_2.c \
-					srcs/instructions_3.c \
-					srcs/instructions_utils.c \
-					srcs/list_operations.c \
-					srcs/preprocess.c \
-					srcs/preprocess-sort.c \
-					srcs/sort.c \
-					srcs/sort_find_range.c \
-					srcs/sort_utils.c \
-					srcs/utils.c
-
-LIBFT			=	libft/ft_atoi.c \
-					libft/ft_memcpy.c \
-					libft/ft_split.c \
-					libft/ft_strdup.c \
-					libft/ft_strlcpy.c \
-					libft/ft_strlen.c \
-					libft/ft_substr.c \
-					libft/ft_isdigit.c
-
-
 NAME			= push_swap
+BONUS			= checker
 
-CFLAGS			= -g -Wall -Wextra -Werror
+CC				= cc
+CFLAGS			= -Wall -Wextra -Werror
+AR				= ar rcs
+RM				= rm -f
+
+SCRS_DIR		= srcs/
+BSRCS_DIR		= srcs/bonus/
+LIBFT_DIR		= libft/
+LIBFT_NAME		= libft/libft.a
+
+SRC				= 	main.c \
+					instructions.c \
+					instructions_2.c \
+					instructions_3.c \
+					instructions_utils.c \
+					list_operations.c \
+					preprocess.c \
+					preprocess-sort.c \
+					sort.c \
+					sort_find_range.c \
+					sort_utils.c \
+					utils.c
+					
+BSRC			= checker_bonus.c \
+					instructions_bonus.c \
+					instructions_2_bonus.c \
+					instructions_3_bonus.c \
+					instructions_utils_bonus.c \
+					list_operations_bonus.c \
+					preprocess_bonus.c \
+					preprocess-sort_bonus.c \
+					utils_bonus.c
+
+SRCS			= $(addprefix ${SRCS_DIR}, ${SRC})
+BSRCS			= $(addprefix ${BSRCS_DIR}, ${BSRC})
 
 all:			$(NAME)
 
-$(NAME):
-				@gcc ${CFLAGS} ${SRC} ${LIBFT} -o ${NAME}
-				@echo "$(GREEN)********** Compiled. $(RESET)"
+bonus:			$(BONUS)
+
+$(NAME) : $(OBJS)
+			make -C $(LIBFT_DIR)
+			$(CC) $(CFLAGS) $(SRCS) -L $(LIBFT_DIR) -o $(NAME)
+			@echo "$(GREEN)**PUSH_SWAP** Compiled. $(RESET)"
+
+$(BONUS) : $(BOBJS)
+			make -C $(LIBFT_DIR)
+			$(CC) $(CFLAGS) $(BSRCS) -L $(LIBFT_DIR) -o $(BONUS)
+			@echo "$(GREEN)**PUSH_SWAP CHECKER** Compiled. $(RESET)"	
 
 clean:
-				@rm -f ${OBJS}
-				@echo "$(PURPLE)********** Objects removed. $(RESET)"
+			make -C $(LIBFT_DIR) clean
+			$(RM) $(OBJS) 
+			@echo "$(YELLOW)**PUSH_SWAP** Objects removed. $(RESET)"
 
-fclean:			clean
-				@rm -f $(NAME) 
+fclean:		clean
+			make -C $(LIBFT_DIR) fclean
+			$(RM) $(NAME) $(BONUS) 
+			@echo "$(LIGHTPURPLE)**PUSH_SWAP** Executable removed. $(RESET)"
 
-				@echo "$(LIGHTPURPLE)********** Executable removed. $(RESET)"
+re:			fclean all
 
-re:				fclean all
+re_bonus:	fclean bonus
 
-.PHONY:		all clean fclean re 
+.PHONY:		all clean fclean re bonus re_nbonus
 

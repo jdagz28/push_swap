@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 01:52:29 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/03 14:18:33 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 01:04:32 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	ft_rotate_list(t_stack *stack_a, t_stack *stack_b, \
 	while (index_a > 0)
 	{	
 		ra(stack_a);
-		index--;
+		index_a--;
 	}
 	while (index_a < 0)
 	{
 		rra(stack_a);
-		idnex_a++;
+		index_a++;
 	}
 	while (index_b > 0)
 	{	

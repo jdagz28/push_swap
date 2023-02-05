@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 11:09:58 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 00:07:30 by jdagoy           ###   ########.fr       */
+/*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
+/*   Updated: 2023/02/05 01:05:19 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/checker.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_error(t_stack *stack, char *error)
 {
-	unsigned char	*dest;
-	unsigned char	*s;
-	unsigned int	i;
+	ft_lstclear(stack);
+	write(STDERR_FILENO, error, ft_strlen(error));
+	exit(1);
+}
+
+void	ft_free_array(char **str)
+{
+	int	i;
 
 	i = 0;
-	dest = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (!dest && !s && n)
-		return (NULL);
-	while (n)
+	while (str[i])
+		free(str[i++]);
+	free(str);
+}
+
+void	ft_lstclear(t_stack *lst)
+{
+	t_node	*temp;
+
+	while (lst && lst->head)
 	{
-		dest[i] = s[i];
-		i++;
-		n--;
+		temp = lst->head->next;
+		free((lst)->head);
+		(lst)->head = temp;
 	}
-	return (dst);
+	free(lst);
 }

@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:40:44 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/01/24 21:43:20 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:07:16 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

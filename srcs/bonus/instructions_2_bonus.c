@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_2.c                                   :+:      :+:    :+:   */
+/*   instructions_2_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:54:29 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:03:59 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 01:04:52 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 // ROTATE - shift up all element of stack by 1
 void	ra(t_stack *stack_a)

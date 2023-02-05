@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_utils.c                               :+:      :+:    :+:   */
+/*   instructions_utils_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:04:07 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 01:05:02 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 void	ft_swap(t_stack *stack)
 {
@@ -31,13 +31,7 @@ void	ft_push(t_stack *stack, int data)
 	new_node->data = data;
 	new_node->prev = stack->head;
 	new_node->next = stack->head->next;
-	stack->head->next->prev = new_node;
-	stack->head->next = new_node;
-	(stack->size)++;
-}
-
-void	ft_rotate(t_stack *stack)
-{
+	stack->head->next->../includes/
 	t_node	*temp;
 
 	temp = stack->head->next;

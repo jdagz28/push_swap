@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:17:49 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/03 10:12:07 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:07:02 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
 static size_t	ft_wordcount(char const *s, char c)
 {

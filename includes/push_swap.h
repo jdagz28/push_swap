@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/01 09:29:10 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:37:31 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
-# include <stdio.h>
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -93,15 +92,5 @@ void    ft_last_sort(t_stack *stack_a);
 void	ft_error(t_stack *stack, char *error);
 void	ft_free_array(char **str);
 void	ft_lstclear(t_stack *lst);
-
-//libft
-int	ft_atoi(const char *str);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-char	**ft_split(char const *s, char c);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int	ft_isdigit(int c);
 
 #endif
