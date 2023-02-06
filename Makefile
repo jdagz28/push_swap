@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 14:20:07 by jdagoy            #+#    #+#              #
-#    Updated: 2023/02/06 12:22:10 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/07 00:19:17 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,8 +83,8 @@ re:			fclean all
 
 re_bonus:	fclean bonus
 
-leaks:		$(NAME)
-			valgrind --leak-check=full ./$(NAME)
+#leaks:		$(NAME)
+#			valgrind --leak-check=full ./$(NAME)
 
-.PHONY:		all clean fclean re bonus re_bonus leaks
+.PHONY:		all clean fclean re bonus re_bonus #leaks
 

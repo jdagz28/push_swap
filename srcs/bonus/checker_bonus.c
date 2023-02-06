@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 14:58:23 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 00:29:06 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,21 @@ int	ft_sort_checker(char *line, t_stack *stack_a, t_stack *stack_b)
 	return (0);
 }	
 
-static void	ft_read_instructions(t_stack *stack_a, t_stack *stack_b)
+static int	ft_read_instructions(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*line;
 
-	line = "";
+	line = get_next_line(0);
 	while (line)
 	{
+		if (ft_strncmp(line, "\n", ft_strlen(line)) == 0)
+			break ;
+		if (ft_sort_checker(line, stack_a, stack_b) == -1)
+			return (-1);
+		free(line);
 		line = get_next_line(0);
-		if (line)
-		{
-			if (ft_sort_checker(line, stack_a, stack_b) == -1)
-				ft_checker_error(stack_a, stack_b, "Error\n");
-			free(line);
-		}
 	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -71,8 +71,9 @@ int	main(int argc, char **argv)
 	if (!stack_a->head->data && !stack_a->size)
 		ft_checker_error(stack_a, stack_b, "Error\n");
 	ft_preprocess(stack_a);
-	ft_read_instructions(stack_a, stack_b);
-	if (is_already_sorted(stack_a) && stack_b->size == 0)
+	if (ft_read_instructions(stack_a, stack_b) == -1)
+		ft_checker_error(stack_a, stack_b, "Error\n");
+	else if (is_already_sorted(stack_a) && stack_b->size == 0)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);
