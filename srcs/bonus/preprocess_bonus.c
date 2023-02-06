@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:05:11 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 10:46:44 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../includes/checker.h"
 
 void	ft_index_list(int *temp, t_stack *stack_a)
 {

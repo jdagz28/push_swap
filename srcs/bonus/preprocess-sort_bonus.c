@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:05:15 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 11:13:08 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../includes/checker.h"
 
 static void	ft_preproc_swap(int *array, int index_1, int index_2)
 {
@@ -56,7 +56,12 @@ static int	ft_partition_array(int *array, int left, int right)
 		while (pivot < array[high] && high >= (left + 1))
 			high--;
 		if (low <= high)
-			ft_preproc_swap(ac
+			ft_preproc_swap(array, low, high);
+	}
+	ft_preproc_swap(array, left, high);
+	return (high);
+}
+
 void	ft_quick_sort(int *array, int left, int right)
 {
 	int	pivot;

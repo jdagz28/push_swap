@@ -6,21 +6,17 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:01:02 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 14:16:28 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHECKER_H
 # define CHECKER_H
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "push_swap.h"
 # include "../libft/libft.h"
 
-int     ft_check_rev_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
-int     ft_check_rotate(char *line, t_stack *stack_a, t_stack *stack_b);
-int     ft_check_push(char *line, t_stack *stack_a, t_stack *stack_b);
-int     ft_check_swap(char *line, t_stack *stack_a, t_stack *stack_b);
 int     ft_sort_checker(char *line, t_stack *stack_a, t_stack *stack_b);
 
 void	sa(t_stack *stack_a);
@@ -55,4 +51,7 @@ int	ft_binary_search(int *array, int len, int target);
 void	ft_error(t_stack *stack, char *error);
 void	ft_free_array(char **str);
 void	ft_lstclear(t_stack *lst);
+void	ft_checker_error(t_stack *stack_a, t_stack *stack_b, char *error);
+int	is_already_sorted(t_stack *stack_a);
+void	ft_clear_stacks(t_stack *stack_a, t_stack *stack_b);
 #endif

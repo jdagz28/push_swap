@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 00:37:31 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 11:07:23 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
-
-typedef struct s_node
-{
-    int             data;
-    struct s_node   *prev;
-    struct s_node   *next;
-}   t_node;
-
-typedef struct s_stack
-{
-    t_node  *head;
-    t_node  *tail;
-    int     size;
-    int     min;
-    int     max;
-}   t_stack;
 
 //list operations
 void    ft_init_stack(t_stack **stack);
@@ -92,5 +76,8 @@ void    ft_last_sort(t_stack *stack_a);
 void	ft_error(t_stack *stack, char *error);
 void	ft_free_array(char **str);
 void	ft_lstclear(t_stack *lst);
+
+//modified libft
+int	ft_atoi(const char *str);
 
 #endif

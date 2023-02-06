@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 02:06:33 by jdagoy            #+#    #+#              #
-#    Updated: 2023/02/05 01:09:16 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/06 12:25:37 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,15 +23,14 @@ SRC			=	ft_atoi.c \
 				ft_putendl_fd.c \
 				ft_putstr_fd.c \
 				ft_split.c \
-				ft_strchr.c \
 				ft_strdup.c \
-				ft_strjoin.c \
 				ft_strlcat.c \
 				ft_strlcpy.c \
 				ft_strlen.c \
 				ft_strncmp.c \
 				ft_substr.c \
-				get_next_line.c 
+				get_next_line.c \
+				get_next_line_utils.c
 
 
 OBJS = $(SRC:.c=.o)

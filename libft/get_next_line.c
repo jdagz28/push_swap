@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:55:51 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 00:47:24 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 12:49:41 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ static char	*ft_get_line(char *saved)
 	int	size;
 
 	size = 0;
-	if (!ft_strchr(saved, '\n'))
-		return (ft_strdup(saved));
+	if (!ft_gnl_strchr(saved, '\n'))
+		return (ft_gnl_strdup(saved));
 	while (saved[size] && saved[size] != '\n')
 		size++;
-	return (ft_substr(saved, 0, size + 1));
+	return (ft_gnl_substr(saved, 0, size + 1));
 }
 
 static char	*ft_clean(char *saved)
 {
 	char	*clear;
 
-	if (!ft_strchr(saved, '\n'))
+	if (!ft_gnl_strchr(saved, '\n'))
 		return (free(saved), NULL);
-	clear = ft_strdup(ft_strchr(saved, '\n') + 1);
+	clear = ft_gnl_strdup(ft_gnl_strchr(saved, '\n') + 1);
 	free(saved);
 	return (clear);
 }
@@ -45,7 +45,7 @@ static char	*ft_read(int fd, char *saved)
 	if (!buffer)
 		return (free(saved), NULL);
 	readbytes = 1;
-	while (readbytes && !ft_strchr(saved, '\n'))
+	while (readbytes && !ft_gnl_strchr(saved, '\n'))
 	{
 		readbytes = read(fd, buffer, BUFFER_SIZE);
 		if (readbytes == -1 || (readbytes == 0 && !saved[0]))
@@ -54,7 +54,7 @@ static char	*ft_read(int fd, char *saved)
 		if (readbytes == 0 && saved[0])
 			return (free(buffer), saved);
 		temp = saved;
-		saved = ft_strjoin(temp, buffer);
+		saved = ft_gnl_strjoin(temp, buffer);
 		free (temp);
 	}
 	free(buffer);
@@ -69,10 +69,10 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!saved)
-		saved = ft_strdup("");
+		saved = ft_gnl_strdup("");
 	if (!saved)
 		return (NULL);
-	if (!ft_strchr(saved, '\n'))
+	if (!ft_gnl_strchr(saved, '\n'))
 		saved = ft_read(fd, saved);
 	if (!saved)
 		return (NULL);

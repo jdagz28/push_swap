@@ -6,11 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:05:07 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 10:46:07 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../includes/checker.h"
 
 void	ft_add_last(t_stack *stack, int data)
 {

@@ -6,15 +6,23 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:05:19 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 14:18:38 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../includes/checker.h"
 
 void	ft_error(t_stack *stack, char *error)
 {
 	ft_lstclear(stack);
+	write(STDERR_FILENO, error, ft_strlen(error));
+	exit(1);
+}
+
+void	ft_checker_error(t_stack *stack_a, t_stack *stack_b, char *error)
+{
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	write(STDERR_FILENO, error, ft_strlen(error));
 	exit(1);
 }
@@ -29,6 +37,12 @@ void	ft_free_array(char **str)
 	free(str);
 }
 
+void	ft_clear_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
+}
+
 void	ft_lstclear(t_stack *lst)
 {
 	t_node	*temp;
@@ -40,4 +54,18 @@ void	ft_lstclear(t_stack *lst)
 		(lst)->head = temp;
 	}
 	free(lst);
+}
+
+int	is_already_sorted(t_stack *stack_a)
+{
+	t_node	*node;
+
+	node = stack_a->head->next;
+	while (node->next->next)
+	{
+		if (node->data > node->next->data)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }

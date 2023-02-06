@@ -6,17 +6,18 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 12:14:59 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:04:55 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/06 14:02:21 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../includes/checker.h"
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
+	if (stack_a->size < 1 || stack_b->size < 1)
+		return ;
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	write(1, "rrr\n", 4);
 }
 
 int	remove_first(t_stack *stack)
