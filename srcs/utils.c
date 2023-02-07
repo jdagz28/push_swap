@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 15:26:37 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 22:17:36 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	ft_lstclear(t_stack *lst)
 {
 	t_node	*temp;
 
-	while (lst)
+	while (lst->head)
 	{
 		temp = lst->head->next;
-		free((lst)->head);
-		(lst)->head = temp;
+		free(lst->head);
+		lst->head = temp;
 	}
 	free(lst);
 }

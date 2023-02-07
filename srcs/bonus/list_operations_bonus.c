@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 10:46:07 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 22:00:48 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,8 @@ void	ft_init_stack(t_stack **stack)
 	(*stack)->head->next = (*stack)->tail;
 	(*stack)->tail->next = NULL;
 	(*stack)->tail->prev = (*stack)->head;
+	(*stack)->head->data = 0;
+	(*stack)->min = 0;
+	(*stack)->max = 0;
 	(*stack)->size = 0;
 }
