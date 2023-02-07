@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/05 01:04:19 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 15:26:31 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	main(int argc, char **argv)
 		ft_error(stack_a, "Error\n");
 	ft_preprocess(stack_a);
 	ft_sort(stack_a);
+	ft_lstclear(stack_a);
 	return (0);
 }
