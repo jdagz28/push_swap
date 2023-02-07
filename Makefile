@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 14:20:07 by jdagoy            #+#    #+#              #
-#    Updated: 2023/02/07 10:12:18 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/07 10:58:55 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME			= push_swap
 BONUS			= checker
 
 CC				= cc
-CFLAGS			= -Wall -Wextra -Werror -g
+CFLAGS			= -Wall -Wextra -Werror
 AR				= ar rcs
 RM				= rm -f
 
