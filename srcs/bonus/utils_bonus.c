@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 14:18:38 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 09:35:48 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@ void	ft_free_array(char **str)
 	while (str[i])
 		free(str[i++]);
 	free(str);
-}
-
-void	ft_clear_stacks(t_stack *stack_a, t_stack *stack_b)
-{
-	ft_lstclear(stack_a);
-	ft_lstclear(stack_b);
 }
 
 void	ft_lstclear(t_stack *lst)

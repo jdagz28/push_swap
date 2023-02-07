@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:09:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 13:49:29 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 09:54:40 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,28 @@
 # include <limits.h>		
 
 # ifndef BUFFER_SIZE
-#   define BUFFER_SIZE 1
-#endif
+#  define BUFFER_SIZE 1
+# endif
 
 typedef struct s_node
 {
-    int             data;
-    struct s_node   *prev;
-    struct s_node   *next;
-}   t_node;
+	int				data;
+	struct s_node	*prev;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_stack
 {
-    t_node  *head;
-    t_node  *tail;
-    int     size;
-    int     min;
-    int     max;
-}   t_stack;
+	t_node	*head;
+	t_node	*tail;
+	int		size;
+	int		min;
+	int		max;
+}	t_stack;
 
 //libft
-int	ft_atoi(const char *str);
-int	ft_isdigit(int c);
+int		ft_atoi(const char *str);
+int		ft_isdigit(int c);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

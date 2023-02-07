@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 14:16:28 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 09:41:24 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-int     ft_sort_checker(char *line, t_stack *stack_a, t_stack *stack_b);
+int		ft_sort_checker(char *line, t_stack *stack_a, t_stack *stack_b);
 
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
@@ -30,7 +30,7 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
-int	remove_first(t_stack *stack);
+int		remove_first(t_stack *stack);
 void	ft_swap(t_stack *stack);
 void	ft_push(t_stack *stack, int data);
 void	ft_rotate(t_stack *stack);
@@ -42,16 +42,16 @@ void	ft_add_last(t_stack *stack, int data);
 
 void	ft_preprocess(t_stack *stack_a);
 void	ft_temp_insert_numbers(int *temp, t_stack *stack_a);
-int	ft_check_duplicate(int *temp, int list_len);
+int		ft_check_duplicate(int *temp, int list_len);
 void	ft_index_list(int *temp, t_stack *stack_a);
 
 void	ft_quick_sort(int *array, int left, int right);
-int	ft_binary_search(int *array, int len, int target);
+int		ft_binary_search(int *array, int len, int target);
 
 void	ft_error(t_stack *stack, char *error);
 void	ft_free_array(char **str);
 void	ft_lstclear(t_stack *lst);
 void	ft_checker_error(t_stack *stack_a, t_stack *stack_b, char *error);
-int	is_already_sorted(t_stack *stack_a);
-void	ft_clear_stacks(t_stack *stack_a, t_stack *stack_b);
+int		is_already_sorted(t_stack *stack_a);
+
 #endif

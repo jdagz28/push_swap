@@ -6,12 +6,11 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:55:49 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/06 12:23:05 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 09:57:27 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_gnl_strjoin(char const *s1, char const *s2)
 {

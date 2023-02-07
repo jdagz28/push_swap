@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 00:29:06 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/07 09:35:39 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ft_read_instructions(t_stack *stack_a, t_stack *stack_b)
 	line = get_next_line(0);
 	while (line)
 	{
-		if (ft_strncmp(line, "\n", ft_strlen(line)) == 0)
+		if (!line)
 			break ;
 		if (ft_sort_checker(line, stack_a, stack_b) == -1)
 			return (-1);
@@ -77,6 +77,7 @@ int	main(int argc, char **argv)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);
-	ft_clear_stacks(stack_a, stack_b);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	return (0);
 }
