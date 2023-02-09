@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:55:51 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 09:58:24 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/09 11:15:30 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,17 @@ static char	*ft_clean(char *saved)
 	char	*clear;
 
 	if (!ft_gnl_strchr(saved, '\n'))
-		return (free(saved), NULL);
+	{
+		free(saved);
+		return (NULL);
+	}
 	clear = ft_gnl_strdup(ft_gnl_strchr(saved, '\n') + 1);
+	if (ft_strncmp(clear, "\n", ft_strlen("\n")))
+	{
+		free(saved);
+		free(clear);
+		return (NULL);
+	}
 	free(saved);
 	return (clear);
 }

@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 09:41:24 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/08 11:34:58 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void	ft_free_array(char **str);
 void	ft_lstclear(t_stack *lst);
 void	ft_checker_error(t_stack *stack_a, t_stack *stack_b, char *error);
 int		is_already_sorted(t_stack *stack_a);
+void	ft_numtab_error(int error, t_stack *stack_a, char **numbers);
 
 #endif

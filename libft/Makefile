@@ -6,7 +6,7 @@
 #    By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 02:06:33 by jdagoy            #+#    #+#              #
-#    Updated: 2023/02/06 12:25:37 by jdagoy           ###   ########.fr        #
+#    Updated: 2023/02/09 15:07:10 by jdagoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ AR				= ar rcs
 RM				= rm -f
 
 SRC			=	ft_atoi.c \
+				ft_bzero.c \
+				ft_calloc.c \
 				ft_isdigit.c \
 				ft_memcpy.c \
 				ft_putchar_fd.c \

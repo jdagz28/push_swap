@@ -6,11 +6,20 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 22:00:48 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/08 11:35:56 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/checker.h"
+
+void	ft_numtab_error(int error, t_stack *stack_a, char **numbers)
+{
+	if (error == 1)
+	{
+		ft_free_array(numbers);
+		ft_error(stack_a, "Error\n");
+	}
+}
 
 void	ft_add_last(t_stack *stack, int data)
 {
@@ -32,7 +41,9 @@ void	ft_insert_numbers(t_stack *stack_a, int argc, char **argv)
 	int		i;
 	char	**numbers;
 	int		num;
+	int		error;
 
+	error = 0;
 	while (--argc)
 	{
 		if (**(++argv) == '\0')
@@ -43,10 +54,10 @@ void	ft_insert_numbers(t_stack *stack_a, int argc, char **argv)
 		i = 0;
 		while (numbers[i])
 		{
-			num = ft_atoi(numbers[i]);
+			num = ft_atoi(numbers[i++], &error);
 			ft_add_last(stack_a, num);
-			i++;
 		}
+		ft_numtab_error(error, stack_a, numbers);
 		ft_free_array(numbers);
 	}
 }

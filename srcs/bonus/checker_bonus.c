@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 09:35:39 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/09 11:19:14 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ static int	ft_read_instructions(t_stack *stack_a, t_stack *stack_b)
 		if (!line)
 			break ;
 		if (ft_sort_checker(line, stack_a, stack_b) == -1)
+		{
+			free(line);
 			return (-1);
+		}
 		free(line);
 		line = get_next_line(0);
 	}
@@ -66,11 +69,11 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	ft_init_stack(&stack_a);
-	ft_init_stack(&stack_b);
 	ft_insert_numbers(stack_a, argc, argv);
 	if (!stack_a->head->data && !stack_a->size)
 		ft_checker_error(stack_a, stack_b, "Error\n");
 	ft_preprocess(stack_a);
+	ft_init_stack(&stack_b);
 	if (ft_read_instructions(stack_a, stack_b) == -1)
 		ft_checker_error(stack_a, stack_b, "Error\n");
 	else if (is_already_sorted(stack_a) && stack_b->size == 0)
