@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:09:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/09 15:07:24 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 22:19:51 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,6 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
-
-typedef struct s_node
-{
-	int				data;
-	struct s_node	*prev;
-	struct s_node	*next;
-}	t_node;
-
-typedef struct s_stack
-{
-	t_node	*head;
-	t_node	*tail;
-	int		size;
-	int		min;
-	int		max;
-}	t_stack;
 
 //libft
 int		ft_atoi(const char *str, int *error);

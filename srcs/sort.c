@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:27 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/12 16:46:12 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 19:57:23 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	ft_sort(t_stack *stack_a)
 	if (stack_a->size == 2)
 		if (stack_a->head->next->data > stack_a->tail->prev->data)
 			sa(stack_a);
-	if (stack_a-> size == 3)
+	if (stack_a->size == 3)
 		ft_sort_three(stack_a);
 	stack_a->min = stack_a->head->next->data;
 	stack_a->max = stack_a->tail->prev->data;

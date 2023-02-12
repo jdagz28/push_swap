@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:20:07 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/08 11:26:40 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 22:20:04 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
+
+typedef struct s_node
+{
+	int				data;
+	struct s_node	*prev;
+	struct s_node	*next;
+}	t_node;
+
+typedef struct s_stack
+{
+	t_node	*head;
+	t_node	*tail;
+	int		size;
+	int		min;
+	int		max;
+}	t_stack;
 
 //list operations
 void	ft_init_stack(t_stack **stack);

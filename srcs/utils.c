@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:06 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/08 11:32:41 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 21:36:35 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_error(t_stack *stack, char *error)
 {
-	ft_lstclear(stack);
+	if (stack)
+		ft_lstclear(stack);
 	write(STDERR_FILENO, error, ft_strlen(error));
 	exit(1);
 }
