@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:01 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/10 20:56:51 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 16:42:49 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_check_duplicate(int *temp, int list_len)
 	while (i < list_len - 1)
 	{
 		if (temp[i] == temp [i + 1])
-			return (1);ß
+			return (1);
 		i++;
 	}
 	return (0);

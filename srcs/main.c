@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:21:43 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/07 15:26:31 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 17:22:47 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 
-	if (argc < 2)
+	if (argc < 2 || (argc == 2 && argv[1][0] == 0))
 		return (1);
 	ft_init_stack(&stack_a);
 	ft_insert_numbers(stack_a, argc, argv);

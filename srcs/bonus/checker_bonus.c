@@ -6,7 +6,7 @@
 /*   By: jdagoy <jdagoy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:25:19 by jdagoy            #+#    #+#             */
-/*   Updated: 2023/02/09 11:19:14 by jdagoy           ###   ########.fr       */
+/*   Updated: 2023/02/12 16:57:32 by jdagoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	ft_init_stack(&stack_a);
 	ft_insert_numbers(stack_a, argc, argv);
 	if (!stack_a->head->data && !stack_a->size)
-		ft_checker_error(stack_a, stack_b, "Error\n");
+		ft_checker_error(stack_a, NULL, "Error\n");
 	ft_preprocess(stack_a);
 	ft_init_stack(&stack_b);
 	if (ft_read_instructions(stack_a, stack_b) == -1)
